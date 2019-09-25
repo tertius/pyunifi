@@ -118,6 +118,14 @@ Return high level health information on status of the setup
 
 Return a list of configured WLANs with their configuration parameters.
 
+### `set_wlan_conf(self, wlan_id, x_password, name=None)`
+
+Update WLAN settings for indivual WLANs.
+
+- `wlan_id` -- WLAN ID to modify.
+- `x_password` -- New WLAN password.
+- `name` -- New WLAN SSID.
+
 ### `restart_ap(self, mac)`
 
 Restart an access point (by MAC).

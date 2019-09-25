@@ -231,6 +231,17 @@ class Controller(object):
         """
         return self._api_read('list/wlanconf')
 
+    def set_wlan_conf(self, wlan_id, x_password, name=None):
+        """
+        Update WLAN configuration
+
+        :param wlan_id: id of wlan: ''
+        :param x_password: new password for WLAN
+        :param name: new name (SSID) for WLAN
+        """
+        params = {'x_passphrase': x_password, 'name': name}
+        return self._api_write('upd/wlanconf/' + str(wlan_id), params)
+
     def _run_command(self, command, params={}, mgr='stamgr'):
         log.debug('_run_command(%s)', command)
         params.update({'cmd': command})
